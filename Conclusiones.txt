@@ -1,0 +1,15 @@
+1. Capacidad de procesamiento (TPS)
+  El sistema alcanzó un promedio de 18.39 TPS, quedando por debajo del objetivo mínimo de 20 TPS.
+  Esto indica que, bajo la configuración actual, el servicio no logra sostener completamente la carga requerida.
+2. Tiempos de respuesta
+  El percentil 95 (643 ms) cumple ampliamente con el umbral definido (<1500 ms).
+  El tiempo promedio (556 ms) es estable y adecuado.
+  Sin embargo, se observa un tiempo máximo elevado (4664 ms), lo que evidencia posibles picos o latencias esporádicas.
+3. Tasa de errores
+  La tasa de error fue 0.00%, cumpliendo el criterio (<3%).
+  Esto demuestra que el servicio es funcionalmente estable bajo carga, sin fallos técnicos.
+4. Consistencia del sistema
+  A pesar de no alcanzar el TPS objetivo, el sistema mantiene:
+    Baja latencia en la mayoría de solicitudes
+    Ausencia de errores
+  Esto sugiere una limitación de capacidad más que un problema de estabilidad.
