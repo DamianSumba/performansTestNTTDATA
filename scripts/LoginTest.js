@@ -4,7 +4,7 @@ import { SharedArray } from 'k6/data';
 
 // Cargar CSV
 const users = new SharedArray('users', function () {
-  return open('user.csv')
+  return open('../user.csv')
     .split('\n')
     .slice(1)
     .map(line => {
@@ -121,7 +121,7 @@ Duración total     : ${(testDuration / 1000).toFixed(1)}s
   console.log(report);
 
   return {
-    'results/summary_report.txt': report,
+    'results/Load_report.txt': report,
     stdout: report,
   };
 }

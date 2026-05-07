@@ -1,15 +1,79 @@
-1. Capacidad de procesamiento (TPS)
+                    CONCLUSIONES DE PRUEBA DE RENDIMIENTO
+               FakeStore API - Servicio de Login
+
+
+1. ANÁLISIS GENERAL
+
+
+Durante las pruebas realizadas con K6, el servicio de autenticación mostró un
+comportamiento estable bajo carga moderada y creciente.
+
+Los tiempos de respuesta se mantuvieron dentro de los umbrales permitidos en
+la mayoría de solicitudes, aunque se identificaron algunos picos de latencia
+en escenarios de mayor concurrencia.
+
+La tasa de error se mantuvo dentro de los límites aceptables, lo que indica
+que el sistema conserva estabilidad funcional bajo carga.
+
+
+2. IMPACTO EN LA EXPERIENCIA DE USUARIO
+
+
+Los resultados indican que el proceso de login ofrece una experiencia fluida
+bajo condiciones normales de uso.
+
+Sin embargo, el incremento de usuarios concurrentes podría generar:
+- mayor tiempo de espera,
+- lentitud en autenticación,
+- posibles timeouts en momentos de alta demanda.
+
+Esto podría afectar la experiencia del usuario y generar reintentos o abandono
+de sesión.
+
+
+3. RIESGOS IDENTIFICADOS
+
+
+- Incremento progresivo de latencia bajo alta concurrencia.
+- Posible saturación del servicio de autenticación.
+- Limitaciones de escalabilidad ante crecimiento de usuarios.
+- Riesgo de degradación del rendimiento en picos de carga.
+
+
+4. RECOMENDACIONES
+
+
+- Optimizar el endpoint de autenticación.
+- Implementar mecanismos de caché para reducir carga.
+- Monitorear CPU, memoria y tiempos de respuesta.
+- Evaluar escalamiento horizontal y balanceo de carga.
+- Ejecutar pruebas adicionales de stress, spike y soak testing.
+
+
+5. CONCLUSIÓN FINAL
+
+
+El sistema presenta un comportamiento estable y tiempos de respuesta aceptables
+bajo carga moderada. No obstante, las pruebas evidencian oportunidades de
+mejora en escalabilidad y manejo de alta concurrencia.
+
+Se recomienda optimizar y monitorear continuamente la plataforma para asegurar
+estabilidad y buen rendimiento ante futuros incrementos de tráfico.
+
+Capacidad de procesamiento (TPS)
   El sistema alcanzó un promedio de 18.39 TPS, quedando por debajo del objetivo mínimo de 20 TPS.
   Esto indica que, bajo la configuración actual, el servicio no logra sostener completamente la carga requerida.
-2. Tiempos de respuesta
+
+Tiempos de respuesta
   El percentil 95 (643 ms) cumple ampliamente con el umbral definido (<1500 ms).
   El tiempo promedio (556 ms) es estable y adecuado.
   Sin embargo, se observa un tiempo máximo elevado (4664 ms), lo que evidencia posibles picos o latencias esporádicas.
-3. Tasa de errores
+
+Tasa de errores
   La tasa de error fue 0.00%, cumpliendo el criterio (<3%).
   Esto demuestra que el servicio es funcionalmente estable bajo carga, sin fallos técnicos.
-4. Consistencia del sistema
+Consistencia del sistema
   A pesar de no alcanzar el TPS objetivo, el sistema mantiene:
-    Baja latencia en la mayoría de solicitudes
-    Ausencia de errores
+    - Baja latencia en la mayoría de solicitudes
+    - Ausencia de errores
   Esto sugiere una limitación de capacidad más que un problema de estabilidad.
