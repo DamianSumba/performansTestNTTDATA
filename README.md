@@ -31,3 +31,7 @@ Escenario:
 Validaciones:
 - Tiempo de respuesta < 1.5 segundos
 - Error rate < 3%
+
+
+Ejercicio 2. 
+- se adjunto el documento del analis de resultados. InformeResultados.doc
