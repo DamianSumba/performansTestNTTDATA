@@ -20,9 +20,16 @@ cd k6-login-test
 
 3. Ejecutar prueba:
 k6 run LoginTest.js
+k6 run SmokeTest.js
+k6 run StressTest.js
+
 
 4. Exportar resultados:
 k6 run --summary-export=results/summary.json LoginTest.js
+
+
+5. REPORTES 
+Los reportes de las pruebas se encuentran en esta ruta: k6_Login_test\results
 
 Escenario:
 - 20 TPS constantes
